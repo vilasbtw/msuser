@@ -25,7 +25,7 @@ public class UserProducer {
         emailDto.setId(userModel.getId());
         emailDto.setEmailTo(userModel.getEmail());
         emailDto.setSubject("You are signed up!");
-        emailDto.setText("Welcome, " + userModel.getName() + "! We are glad you are with us.");
+        emailDto.setText("Welcome, " + userModel.getName() + "! We are glad you joined us.");
 
         rabbitTemplate.convertAndSend("", routingKey, emailDto);
     }
